@@ -98,7 +98,7 @@ Prediction probability
 
 Regression
 
-* A prediction task where the target consists of one or more continuous variables. An example of a regression problem would be the prediction of the length of a salmon as a function of its age and weight.
+* A prediction task where the target is a continuous variable. An example of a regression problem would be the prediction of the length of a salmon as a function of its age and weight.
 
     *Examples:* Predicting stock prices, credit scores, survival analysis
 
