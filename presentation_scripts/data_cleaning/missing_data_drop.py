@@ -27,4 +27,6 @@ df["graduation_year"] = df["graduation_year"].mask(np.random.random(df.shape[0])
 # Drop rows with missing 'graduation_year' values, and change the 'graduation_year' datatype to int
 df_dropped_nas = df.dropna(axis=0, subset=["graduation_year"]).astype({"graduation_year": int})
 
-print(f"df rows: {len(df)}\ndf_dropped_nas rows: {len(df_dropped_nas)}")
+print(
+    f"Rows before dropping missing data: {len(df)}\nRows after dropping missing data: {len(df_dropped_nas)}"
+)
