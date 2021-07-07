@@ -50,8 +50,8 @@ df["longitude"] = df["longitude"].mask(
     (mask_array < 0.1) | ((mask_array > 0.7) & (mask_array < 0.8))
 )
 
-
 print(f"Missing data by column: {df.isna().sum()}")
+
 
 # Create values to fill in missing data by averaging each district's latitude and longitude
 district_means = df.groupby("district").agg({"latitude": "mean", "longitude": "mean"})
@@ -72,4 +72,5 @@ df_imputed["longitude"] = df_imputed["longitude"].fillna(
 # This is one way to find donors who need addresses
 df_imputed["latitude"] = df_imputed["latitude"].fillna(38.5)
 df_imputed["longitude"] = df_imputed["longitude"].fillna(-68)
+
 print(f"Missing data by column: {df_imputed.isna().sum()}")
