@@ -7,7 +7,7 @@ import numpy as np
 
 # Define constants used in the code below
 RANDOM_SEED = 888
-N_ROWS = 101
+N_ROWS = 100
 
 # Set random seed for reproducible results
 np.random.seed(RANDOM_SEED)
