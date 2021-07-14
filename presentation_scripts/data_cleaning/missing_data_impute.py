@@ -7,6 +7,8 @@ import numpy as np
 # Define constants used in the code below
 RANDOM_SEED = 888
 N_ROWS = 100
+MISSING_DISTRICT_LATITUDE = 38.5
+MISSING_DISTRICT_LONGITUDE = -68
 
 
 # Set random seed for reproducible results
@@ -70,7 +72,7 @@ df_imputed["longitude"] = df_imputed["longitude"].fillna(
 # Fill in (impute) lat/lon for rows with no district data
 # This data is off the East Coast for visibility and easy filtering
 # This is one way to find donors who need addresses
-df_imputed["latitude"] = df_imputed["latitude"].fillna(38.5)
-df_imputed["longitude"] = df_imputed["longitude"].fillna(-68)
+df_imputed["latitude"] = df_imputed["latitude"].fillna(MISSING_DISTRICT_LATITUDE)
+df_imputed["longitude"] = df_imputed["longitude"].fillna(MISSING_DISTRICT_LONGITUDE)
 
 print(f"Missing data by column after imputing:\n{df_imputed.isna().sum()}")
