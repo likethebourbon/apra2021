@@ -1,4 +1,4 @@
-# Code for dropping rows with missing data
+"""Code for dropping rows with missing data."""
 
 import random
 
