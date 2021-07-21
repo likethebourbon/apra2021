@@ -1,1 +1,30 @@
 # Code for aggregating data using the groupby method on a pandas DataFrame
+
+import pandas as pd
+import numpy as np
+
+
+# Define constants used in the code below
+RANDOM_SEED = 888
+ID_COUNT = 1000
+YEARS = [year for year in range(1990, 2022)]
+
+
+# Set random seed for reproducible results
+# np.random.seed(RANDOM_SEED)
+
+# Create dataset
+df = pd.DataFrame()
+
+for donor_id in range(ID_COUNT):
+    start_year = np.random.choice(YEARS)
+    donor_years = list(range(start_year, 2022))
+    years_given = np.ma.array(
+        donor_years, mask=(np.array([np.random.random() for _ in donor_years]) < 0.15)
+    ).compressed()
+    years_given = np.repeat(years_given, np.random.randint(1, 6, size=len(years_given)))
+    gifts = np.round(np.random.exponential(scale=250, size=len(years_given)), 2)
+    temp_df = pd.DataFrame(
+        data={"id": donor_id + 1000, "fiscal_year": years_given, "amount_given": gifts}
+    )
+    df = pd.concat([df, temp_df], ignore_index=True)
