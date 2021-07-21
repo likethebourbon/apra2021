@@ -28,3 +28,18 @@ for donor_id in range(ID_COUNT):
         data={"id": donor_id + 1000, "fiscal_year": years_given, "amount_given": gifts}
     )
     df = pd.concat([df, temp_df], ignore_index=True)
+
+
+# Aggregate data
+# Sum gifts in each donor's fiscal years for 'amount_given'
+# Add a new column 'gift_count' to count each donor's gifts in each fiscal year
+aggregated_df = (
+    df.groupby(["id", "fiscal_year"])
+    .agg(
+        amount_given=("amount_given", "sum"),
+        gift_count=("amount_given", "count"),
+    )
+    .reset_index()
+)
+
+print(aggregated_df.head(10))
