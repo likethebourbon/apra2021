@@ -1,4 +1,4 @@
-# Code for aggregating data using the groupby method on a pandas DataFrame
+"""Code for aggregating data using the groupby method on a pandas DataFrame."""
 
 import pandas as pd
 import numpy as np
