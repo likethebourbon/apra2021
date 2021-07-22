@@ -61,3 +61,5 @@ def calculate_churn(df):
 aggregated_df["churn"] = calculate_churn(aggregated_df)
 
 aggregated_df = aggregated_df.reset_index()
+
+print(aggregated_df.head(30))
