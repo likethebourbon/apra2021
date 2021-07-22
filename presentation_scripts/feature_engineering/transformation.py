@@ -1,1 +1,1 @@
-# Code for transforming data into another form without reducing the number of rows
+"""Code for transforming data into another form without reducing the number of rows."""
