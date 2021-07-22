@@ -1,1 +1,1 @@
-# Code for one-hot encoding categorical variables
+"""Code for one-hot encoding categorical variables."""
