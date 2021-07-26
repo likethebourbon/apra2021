@@ -13,7 +13,7 @@ YEARS = [year for year in range(1990, 2022)]
 
 
 # Set random seed for reproducible results
-# np.random.seed(RANDOM_SEED)
+np.random.seed(RANDOM_SEED)
 
 # Create dataset
 df = pd.DataFrame()
