@@ -271,8 +271,7 @@ def apply_to_all_years(
         if column_name is None:
             column_name = temp_df.name
         df_to_join = pd.concat([df_to_join, temp_df])
-    # Create a MultiIndex so returned DataFrame can be joined on
-    # `id_column` and `fiscal_year`
+    # Create a MultiIndex so returned DataFrame can be joined on `id_column` and `fiscal_year`
     df_to_join.index = pd.MultiIndex.from_tuples(df_to_join.index)
     df_to_join.columns = [column_name]
     df_to_join = df_to_join.fillna(fillna_value)
