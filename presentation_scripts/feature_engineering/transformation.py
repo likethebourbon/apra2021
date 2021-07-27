@@ -9,6 +9,7 @@ import pandas as pd
 # Define constants used in the code below
 RANDOM_SEED = 888
 ROW_COUNT = 1000
+LAST_FISCAL_MONTH = 6
 
 
 # Code to create the dataset
@@ -21,4 +22,4 @@ df = pd.DataFrame({"date": [random_date() for _ in range(ROW_COUNT)]})
 
 
 # Transform each date into a fiscal year beginning on July 1
-df["fiscal_year"] = (pd.to_datetime(df["date"]) + pd.DateOffset(months=6)).dt.year
+df["fiscal_year"] = (pd.to_datetime(df["date"]) + pd.DateOffset(months=LAST_FISCAL_MONTH)).dt.year
